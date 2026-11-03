@@ -45,10 +45,12 @@ Prefer to read a script before running it? Download it first, then run it: `curl
 Start with the [documentation index](docs/README.md), or jump to:
 
 - [Installation](docs/installation.md)
+- [Connecting Samba](docs/connecting-samba.md) — protect your shares and check the connection
 - [Getting started](docs/getting-started.md)
 - [SnapShield dashboard](docs/dashboard.md)
 - [Control Panel](docs/control-panel.md) — manage many SnapShield servers from one place
 - [Licensing](docs/licensing.md) — Community and Enterprise
+- [Day-to-day operation](docs/README.md#day-to-day-operation) — responding to alerts, restoring files, bans, honeyfiles, fire drills and routine checks
 - [Troubleshooting](docs/troubleshooting.md) and [FAQ](docs/faq.md)
 
 ## Community and Enterprise

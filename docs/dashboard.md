@@ -28,6 +28,7 @@ A quick health view of this server.
 
 | Card | Shows |
 |------|-------|
+| Samba Connection | Whether Samba is running with the SnapShield module, whether the detection service is receiving, and every share with its protection status and live activity. See [Connecting Samba](connecting-samba.md#step-3-check-the-connection). |
 | Average File Score (72h) | Moving average of file scores over 72 hours. 0 means nothing suspicious. It turns red above 20. |
 | Number Files Scored | Files scored since SnapShield started. |
 | New Events Detected | Events that have not been resolved. |

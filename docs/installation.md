@@ -91,7 +91,7 @@ Check that SnapShield's services are running:
 systemctl --no-pager status 'snapshield*'
 ```
 
-All services should be `active (running)`. Then continue with [Getting started](getting-started.md): it covers turning SnapShield on for your Samba shares (`vfs objects = snapshield`) and making sure snapshots are being taken. SnapShield doesn't protect a share until both are done.
+All services should be `active (running)`. Then [connect your Samba shares](connecting-samba.md) and continue with [Getting started](getting-started.md). SnapShield doesn't protect a share until the share loads the SnapShield module and snapshots are being taken.
 
 ## Manual repository setup
 
