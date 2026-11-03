@@ -18,9 +18,7 @@
 # Options:
 #   --community      use the 45Drives Community repository (default)
 #   --enterprise     use the 45Drives Enterprise repository
-#   --stable         use the stable release stream only
-#   --testing        also turn on the testing release stream (default while
-#                    SnapShield 0.3 rolls out from testing to stable)
+#   --testing        also enable the testing stream, for pre-release builds
 #   --repo-only      set up the repository but do not install anything
 #   --dry-run        print what would be done without changing anything
 #   -h, --help       show this help
@@ -38,13 +36,10 @@ GPG_KEY_URL="$REPO_HOST/key/gpg.asc"
 APT_KEYRING="/usr/share/keyrings/45drives-archive-keyring.gpg"
 ARCHIVE_DIR="/opt/45drives/archives/repos"
 
-# "testing" turns the testing stream on alongside stable (the package manager
-# picks the newest build from either). Switch to "stable" once SnapShield 0.3
-# has fully rolled out to the stable stream of both repositories.
-DEFAULT_STREAM="testing"
-
 CHANNEL="community"
-STREAM="$DEFAULT_STREAM"
+# "testing" enables the testing stream alongside stable; the package manager
+# then picks the newest build from either.
+STREAM="stable"
 REPO_ONLY=0
 DRY_RUN=0
 
@@ -91,8 +86,7 @@ does the rest.
 Options:
   --community      use the 45Drives Community repository (default)
   --enterprise     use the 45Drives Enterprise repository
-  --stable         use the stable release stream only
-  --testing        also turn on the testing release stream (default for now)
+  --testing        also enable the testing stream, for pre-release builds
   --repo-only      set up the repository but do not install anything
   --dry-run        print what would be done without changing anything
   -h, --help       show this help
@@ -106,7 +100,6 @@ parse_args() {
     case "$1" in
       --community)  CHANNEL="community" ;;
       --enterprise) CHANNEL="enterprise" ;;
-      --stable)     STREAM="stable" ;;
       --testing)    STREAM="testing" ;;
       --repo-only)  REPO_ONLY=1 ;;
       --dry-run)    DRY_RUN=1 ;;

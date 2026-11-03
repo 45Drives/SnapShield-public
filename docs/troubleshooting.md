@@ -129,6 +129,49 @@ It may be necessary to reboot the server after the first installation.
 
 **Fix:** None needed. Copy some files to a protected share and the cards fill in.
 
+## Samba connection
+
+### Samba Connection says "Module missing"
+
+**Cause:** Samba is running without the SnapShield module. This happens when Samba came from the operating system's own repositories instead of the 45Drives repository.
+
+**Fix:** Install the 45Drives Samba build, which includes the module, then restart Samba. See [Connecting Samba](connecting-samba.md#step-1-use-the-45drives-samba-build).
+
+```bash
+# Ubuntu
+sudo apt-get install samba samba-vfs-modules
+sudo systemctl restart smbd
+
+# Rocky Linux / RHEL
+sudo dnf install samba samba-vfs-snapshield
+sudo systemctl restart smb
+```
+
+### Samba Connection says "Not reporting"
+
+**Cause:** SnapShield's detection service (`snapshield-radar`) is stopped or restarting, so no file activity is being watched.
+
+**Fix:** Check and start it:
+
+```bash
+systemctl --no-pager status snapshield-radar
+sudo systemctl restart snapshield-radar
+```
+
+If it keeps stopping, read its log (`journalctl -u snapshield-radar -n 100`) and see [Services aren't running](#services-arent-running).
+
+### A share shows "Protected" but no sessions or activity
+
+**Cause:** Clients connected before the share was protected, or nobody is using the share.
+
+**Fix:** Reconnect the client (disconnect and reconnect the share), then copy a file into it. Activity should appear within a few seconds. If it doesn't, run `sudo smbcontrol all reload-config` and reconnect again.
+
+### A share shows "Not protected"
+
+**Cause:** The share doesn't have `vfs objects = snapshield`, or it has its own `vfs objects` line that overrides the one in `[global]`.
+
+**Fix:** Add `snapshield` to the share's `vfs objects`. See [Protect a share](connecting-samba.md#step-2-protect-a-share).
+
 ## Detection and scoring
 
 ### No files are being scored
@@ -137,7 +180,7 @@ It may be necessary to reboot the server after the first installation.
 
 **Fix:**
 
-1. Check the share has `vfs objects = snapshield`. See [Getting started](getting-started.md#2-turn-snapshield-on-for-your-shares).
+1. Check the **Samba Connection** card on the **Overview** page: the share should show **Protected** with recent activity. See [Connecting Samba](connecting-samba.md).
 2. Check SnapShield can see snapshots (next entry).
 
 ### SnapShield can't find snapshots
@@ -157,7 +200,7 @@ It may be necessary to reboot the server after the first installation.
 
 **Cause:** Bulk copying looks like ransomware or data theft.
 
-**Fix:** Unban the address on **Quarantine**. Then add the client to **Settings → White List IPs** (or **White List Users**) and click **Save**.
+**Fix:** Unban the address on **Quarantine**. Then add the client to **Settings → White List IPs** (or **White List Users**), click **Save**, then **Restart** so the detection service picks up the change. See [Bans and allowlists](bans-and-allowlists.md).
 
 ### Too many false positives
 

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">How SnapShield works</title>
+<desc id="d">Watch file changes on Samba shares, score them against snapshots, stop suspicious clients, and recover files from snapshots.</desc>
+<rect x="22.0" y="20" width="196" height="236" rx="14" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<rect x="40.0" y="20" width="160" height="5" rx="2.5" fill="#0969da"/>
+<circle cx="120.0" cy="82" r="30" fill="#ddf4ff"/><path d="M102.0,82 Q120.0,66 138.0,82 Q120.0,98 102.0,82 Z" stroke="#0969da" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120.0" cy="82" r="5" fill="#0969da"/>
+<text x="120.0" y="144" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1.5" fill="#0969da">1 · WATCH</text>
+<text x="120.0" y="172" text-anchor="middle" font-size="14" fill="#1f2328">SnapShield's Samba</text>
+<text x="120.0" y="192" text-anchor="middle" font-size="14" fill="#1f2328">module sees every</text>
+<text x="120.0" y="212" text-anchor="middle" font-size="14" fill="#1f2328">file change on your</text>
+<text x="120.0" y="232" text-anchor="middle" font-size="14" fill="#1f2328">protected shares.</text>
+<line x1="226.0" y1="138.0" x2="246.0" y2="138.0" stroke="#8c959f" stroke-width="2.5"/>
+<path d="M244.0,131.0 L254.0,138.0 L244.0,145.0 Z" fill="#8c959f"/>
+<rect x="262.0" y="20" width="196" height="236" rx="14" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<rect x="280.0" y="20" width="160" height="5" rx="2.5" fill="#9a6700"/>
+<circle cx="360.0" cy="82" r="30" fill="#fff8c5"/><path d="M343.0,90 A18,18 0 1 1 377.0,90" stroke="#9a6700" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="360.0" y1="86" x2="369.0" y2="73" stroke="#9a6700" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="360.0" cy="86" r="3.5" fill="#9a6700"/>
+<text x="360.0" y="144" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1.5" fill="#9a6700">2 · SCORE</text>
+<text x="360.0" y="172" text-anchor="middle" font-size="14" fill="#1f2328">Each change is scored</text>
+<text x="360.0" y="192" text-anchor="middle" font-size="14" fill="#1f2328">against your snapshots,</text>
+<text x="360.0" y="212" text-anchor="middle" font-size="14" fill="#1f2328">with behaviour checks</text>
+<text x="360.0" y="232" text-anchor="middle" font-size="14" fill="#1f2328">and decoy honeyfiles.</text>
+<line x1="466.0" y1="138.0" x2="486.0" y2="138.0" stroke="#8c959f" stroke-width="2.5"/>
+<path d="M484.0,131.0 L494.0,138.0 L484.0,145.0 Z" fill="#8c959f"/>
+<rect x="502.0" y="20" width="196" height="236" rx="14" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<rect x="520.0" y="20" width="160" height="5" rx="2.5" fill="#cf222e"/>
+<circle cx="600.0" cy="82" r="30" fill="#ffebe9"/><path d="M600.0,63 L615.0,69 L615.0,83 Q615.0,95 600.0,101 Q585.0,95 585.0,83 L585.0,69 Z" stroke="#cf222e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="593.0" y1="82" x2="607.0" y2="82" stroke="#cf222e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="600.0" y="144" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1.5" fill="#cf222e">3 · STOP</text>
+<text x="600.0" y="172" text-anchor="middle" font-size="14" fill="#1f2328">Suspicious clients are</text>
+<text x="600.0" y="192" text-anchor="middle" font-size="14" fill="#1f2328">banned before the</text>
+<text x="600.0" y="212" text-anchor="middle" font-size="14" fill="#1f2328">attack spreads, and</text>
+<text x="600.0" y="232" text-anchor="middle" font-size="14" fill="#1f2328">you are alerted.</text>
+<line x1="706.0" y1="138.0" x2="726.0" y2="138.0" stroke="#8c959f" stroke-width="2.5"/>
+<path d="M724.0,131.0 L734.0,138.0 L724.0,145.0 Z" fill="#8c959f"/>
+<rect x="742.0" y="20" width="196" height="236" rx="14" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+<rect x="760.0" y="20" width="160" height="5" rx="2.5" fill="#1a7f37"/>
+<circle cx="840.0" cy="82" r="30" fill="#dafbe1"/><path d="M826.0,76 A16,16 0 1 1 830.0,94" stroke="#1a7f37" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M819.0,68 L826.0,77 L835.0,71" stroke="#1a7f37" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="840.0" y="144" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1.5" fill="#1a7f37">4 · RECOVER</text>
+<text x="840.0" y="172" text-anchor="middle" font-size="14" fill="#1f2328">Restore affected files</text>
+<text x="840.0" y="192" text-anchor="middle" font-size="14" fill="#1f2328">from snapshots in the</text>
+<text x="840.0" y="212" text-anchor="middle" font-size="14" fill="#1f2328">SnapShield dashboard.</text>
+<text x="840.0" y="232" text-anchor="middle" font-size="14" fill="#1f2328"></text>
+<rect x="22.0" y="282" width="916" height="74" rx="12" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text x="120.0" y="312" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#59636e">RUNS ON</text>
+<text x="120.0" y="334" text-anchor="middle" font-size="14" fill="#1f2328">your Samba file server</text>
+<text x="360.0" y="312" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#59636e">USES</text>
+<text x="360.0" y="334" text-anchor="middle" font-size="14" fill="#1f2328">ZFS or Ceph snapshots</text>
+<text x="600.0" y="312" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#59636e">MANAGED IN</text>
+<text x="600.0" y="334" text-anchor="middle" font-size="14" fill="#1f2328">Cockpit on each server</text>
+<text x="840.0" y="312" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#59636e">OPTIONAL</text>
+<text x="840.0" y="334" text-anchor="middle" font-size="14" fill="#1f2328">Control Panel for fleets</text>
+</svg>

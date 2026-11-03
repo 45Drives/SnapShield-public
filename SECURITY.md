@@ -25,8 +25,3 @@ Please give us a reasonable chance to release a fix before you disclose the issu
 ## Supported versions
 
 Security fixes are made for the latest SnapShield release. Upgrade to the latest version before reporting, if you can.
-
-| Version | Supported |
-|---|---|
-| 0.3.x | Yes |
-| Earlier | No |

@@ -29,6 +29,8 @@ vfs objects = snapshield
 
 In Houston, open **Samba File Sharing**, edit the share, and add the line under **Advanced Settings**. If you manage `smb.conf` by hand, add it to the share's section. If the share already has a `vfs objects` line, add `snapshield` to the existing list.
 
+Then check the **Samba Connection** card on the **Overview** page: each share should show **Protected**, and the badge should read **N of N shares protected**. [Connecting Samba](connecting-samba.md) covers the module, protecting every share at once, and what each status means.
+
 ## 3. Make sure snapshots exist
 
 SnapShield compares files against your storage snapshots. Without snapshots it cannot score files accurately or restore them.
@@ -65,8 +67,7 @@ The main event types are:
 | Event type | Meaning |
 |------------|---------|
 | Encrypting | File contents look encrypted. Possible ransomware. |
-| SuspiciousAccess | Access pattern consistent with ransomware. |
-| Honeyfile | A decoy honey-file was opened, changed or deleted. |
+| Honeyfile | A decoy honey-file was opened. |
 | AccessWarning | Raised file scores, not yet confirmed as ransomware. |
 | StaticRateAlert / StaticRateWarning | A client went over the files-per-minute limit. |
 | HourlySpikeAlert / HourlySpikeWarning | A user read far more files than their normal hourly baseline. |

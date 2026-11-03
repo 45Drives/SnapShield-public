@@ -4,6 +4,13 @@ SnapShield by [45Drives](https://www.45drives.com/) protects Samba file servers 
 
 This repository is the public home for SnapShield's **documentation** and **bug reports**. The packages themselves come from the 45Drives package repository.
 
+## How it works
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/how-it-works-dark.svg">
+  <img alt="How SnapShield works: 1. Watch — SnapShield's Samba module sees every file change on your protected shares. 2. Score — each change is scored against your snapshots, with behaviour checks and decoy honeyfiles. 3. Stop — suspicious clients are banned before the attack spreads, and you are alerted. 4. Recover — restore affected files from snapshots in the SnapShield dashboard." src="docs/images/how-it-works-light.svg" width="100%">
+</picture>
+
 ## Quick start
 
 On the file server, as root:
@@ -33,17 +40,17 @@ Prefer to read a script before running it? Download it first, then run it: `curl
 | Rocky Linux, RHEL, AlmaLinux | 8, 9 |
 | Ubuntu | 20.04 LTS, 22.04 LTS |
 
-SnapShield 0.3 is rolling out from the **testing** release stream of the 45Drives repository to stable. Until that finishes, `setup.sh` turns on testing alongside stable, so you get the newest build from either.
-
 ## Documentation
 
 Start with the [documentation index](docs/README.md), or jump to:
 
 - [Installation](docs/installation.md)
+- [Connecting Samba](docs/connecting-samba.md) — protect your shares and check the connection
 - [Getting started](docs/getting-started.md)
 - [SnapShield dashboard](docs/dashboard.md)
 - [Control Panel](docs/control-panel.md) — manage many SnapShield servers from one place
 - [Licensing](docs/licensing.md) — Community and Enterprise
+- [Day-to-day operation](docs/README.md#day-to-day-operation) — responding to alerts, restoring files, bans, honeyfiles, fire drills and routine checks
 - [Troubleshooting](docs/troubleshooting.md) and [FAQ](docs/faq.md)
 
 ## Community and Enterprise
