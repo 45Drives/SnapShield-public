@@ -4,6 +4,13 @@ SnapShield by [45Drives](https://www.45drives.com/) protects Samba file servers 
 
 This repository is the public home for SnapShield's **documentation** and **bug reports**. The packages themselves come from the 45Drives package repository.
 
+## How it works
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/how-it-works-dark.svg">
+  <img alt="How SnapShield works: 1. Watch — SnapShield's Samba module sees every file change on your protected shares. 2. Score — each change is scored against your snapshots, with behaviour checks and decoy honeyfiles. 3. Stop — suspicious clients are banned before the attack spreads, and you are alerted. 4. Recover — restore affected files from snapshots in the SnapShield dashboard." src="docs/images/how-it-works-light.svg" width="100%">
+</picture>
+
 ## Quick start
 
 On the file server, as root:
