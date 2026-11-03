@@ -1,0 +1,95 @@
+name: Bug report
+description: Something in SnapShield isn't working as it should.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this.
+
+        **Issues are public.** Remove hostnames, IP addresses, usernames, share paths and license keys from everything you paste.
+        **Security vulnerability?** Don't file it here — see [SECURITY.md](https://github.com/45Drives/SnapShield-public/blob/main/SECURITY.md).
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Where did the problem happen?
+      options:
+        - Installation (setup.sh or packages)
+        - Setup wizard (Cockpit)
+        - SnapShield dashboard
+        - Detection / blocking / honeyfiles
+        - Control Panel
+        - Licensing
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: SnapShield version
+      description: "Ubuntu: `dpkg -l | grep snapshield`. Rocky/RHEL: `rpm -qa | grep snapshield`."
+      placeholder: "snapshield 0.3.2, cockpit-snapshield 0.3.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Rocky Linux / RHEL / AlmaLinux 9
+        - Rocky Linux / RHEL / AlmaLinux 8
+        - Ubuntu 22.04
+        - Ubuntu 20.04
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Edition
+      options:
+        - Community
+        - Enterprise trial
+        - Enterprise
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect to see instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error messages
+      description: |
+        Paste relevant output, with private details removed. For service problems, start with
+        `systemctl --no-pager status 'snapshield*'` and `journalctl -u 'snapshield*' --since "1 hour ago"`.
+      render: text
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag images here if they help. Blur anything private.

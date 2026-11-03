@@ -1,0 +1,24 @@
+name: Documentation problem
+description: Something in the guides is wrong, unclear or missing.
+labels: ["docs"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Link to the guide (and section) you're reporting.
+      placeholder: https://github.com/45Drives/SnapShield-public/blob/main/docs/installation.md#...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or missing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording (optional)
