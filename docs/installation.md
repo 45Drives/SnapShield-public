@@ -38,8 +38,7 @@ sudo bash setup.sh
 |---|---|
 | `--community` | Use the 45Drives Community repository. This is the default. |
 | `--enterprise` | Use the 45Drives Enterprise repository. |
-| `--testing` | Turn on the testing release stream as well as stable, and install the newest build from either. This is the default while SnapShield 0.3 rolls out to stable. |
-| `--stable` | Use the stable release stream only. |
+| `--testing` | Also enable the 45Drives testing stream, for pre-release builds. |
 | `--repo-only` | Set up the repository only; don't install Cockpit or the plugin. |
 | `--dry-run` | Print what would be done without changing anything. |
 
@@ -53,7 +52,7 @@ Both repositories carry the same SnapShield packages. Your **license** decides w
 
 ### What the script changes
 
-- **Rocky / RHEL:** writes `/etc/yum.repos.d/45drives-community.repo` (or `-enterprise.repo`) from the official 45Drives repository file, with the testing stream turned on or off to match your choice.
+- **Rocky / RHEL:** writes `/etc/yum.repos.d/45drives-community.repo` (or `-enterprise.repo`) from the official 45Drives repository file, with the testing stream enabled only if you pass `--testing`.
 - **Ubuntu:** installs the 45Drives signing key to `/usr/share/keyrings/45drives-archive-keyring.gpg` and writes `/etc/apt/sources.list.d/45drives-community-<codename>.list` (or `-enterprise-`).
 - Moves any repository file that still points at the retired `enterprise-premium` repository to `/opt/45drives/archives/repos/`.
 - Installs `cockpit` and `cockpit-snapshield` (without the SnapShield service itself — the wizard installs that), enables `cockpit.socket`, and opens port 9090 if firewalld or ufw is active.
@@ -102,19 +101,18 @@ If you'd rather not use the script, set up the repository yourself, then install
 
 ```bash
 sudo curl -sSL https://repo.45drives.com/repofiles/rocky/45drives-community.repo -o /etc/yum.repos.d/45drives-community.repo
-sudo dnf config-manager --set-enabled 45drives_community_testing   # while SnapShield 0.3 rolls out to stable
 sudo dnf install -y cockpit
 sudo dnf install -y --setopt=install_weak_deps=False cockpit-snapshield
 sudo systemctl enable --now cockpit.socket
 ```
 
-`dnf config-manager` comes from the `dnf-plugins-core` package. For Enterprise, replace `community` with `enterprise` throughout.
+For Enterprise, replace `community` with `enterprise` throughout.
 
 **Ubuntu 20.04 and 22.04:**
 
 ```bash
 curl -fsSL https://repo.45drives.com/key/gpg.asc | sudo gpg --dearmor -o /usr/share/keyrings/45drives-archive-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/45drives-archive-keyring.gpg] https://repo.45drives.com/community/ubuntu $(lsb_release -sc) main testing" \
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/45drives-archive-keyring.gpg] https://repo.45drives.com/community/ubuntu $(lsb_release -sc) main" \
   | sudo tee /etc/apt/sources.list.d/45drives-community-$(lsb_release -sc).list
 sudo apt-get update
 sudo apt-get install -y cockpit
@@ -122,7 +120,7 @@ sudo apt-get install -y --no-install-recommends cockpit-snapshield
 sudo systemctl enable --now cockpit.socket
 ```
 
-The 45Drives repository includes a current Cockpit build, so Cockpit comes from there too. For Enterprise, replace `community` with `enterprise`. Drop `testing` from the source line once SnapShield 0.3 has finished rolling out to stable.
+The 45Drives repository includes a current Cockpit build, so Cockpit comes from there too. For Enterprise, replace `community` with `enterprise`.
 
 ## Next steps
 

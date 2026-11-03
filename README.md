@@ -40,8 +40,6 @@ Prefer to read a script before running it? Download it first, then run it: `curl
 | Rocky Linux, RHEL, AlmaLinux | 8, 9 |
 | Ubuntu | 20.04 LTS, 22.04 LTS |
 
-SnapShield 0.3 is rolling out from the **testing** release stream of the 45Drives repository to stable. Until that finishes, `setup.sh` turns on testing alongside stable, so you get the newest build from either.
-
 ## Documentation
 
 Start with the [documentation index](docs/README.md), or jump to:

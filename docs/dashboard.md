@@ -40,7 +40,7 @@ A quick health view of this server.
 
 ### Snapshots
 
-Shows snapshot information for your datasets. This page appears only on some installations.
+Shows snapshot information for your datasets. This page appears on ZFS servers.
 
 ### Metrics
 
